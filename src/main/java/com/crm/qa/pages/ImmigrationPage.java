@@ -19,8 +19,20 @@ public class ImmigrationPage extends TestBase {
 	@FindBy(xpath  = "(//input[@class='oxd-input oxd-input--active'])[2]")
 	WebElement Number;
 	
+	@FindBy(xpath  = "(//input[@class='oxd-input oxd-input--active'])[3]")
+	WebElement issueDate;
+	
+	@FindBy(xpath  = "(//input[@class='oxd-input oxd-input--active'])[4]")
+	WebElement expireDate;
+	
+	@FindBy(xpath  = "(//input[@class='oxd-input oxd-input--active'])[5]")
+	WebElement status;
+	
 	@FindBy(xpath  = "//h6[normalize-space()='Assigned Immigration Records']")
 	WebElement Title;
+	
+	@FindBy(xpath  = "//button[@type='submit']")
+	WebElement save;
 	
 
 	// Initializing the Page Objects:
@@ -33,9 +45,17 @@ public class ImmigrationPage extends TestBase {
 		return Title.isDisplayed();
 	}
 	
-	public void addRecord(String passNumber)
+	public void addRecord(String PassNumber,String IssueDate,String ExpireDate,String Status)
 	{
-		Number.sendKeys(passNumber);
+		addButton.click();
+		Number.sendKeys(PassNumber);
+		issueDate.sendKeys(IssueDate);
+		expireDate.sendKeys(ExpireDate);
+		status.sendKeys(Status);
+		save.click();
+		
+		
+		
 	}
 
 }

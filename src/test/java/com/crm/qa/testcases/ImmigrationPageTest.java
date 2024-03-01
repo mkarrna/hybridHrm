@@ -30,17 +30,19 @@ public class ImmigrationPageTest extends TestBase{
 	}
 	
 	@Test(priority=1)
-	public void addRecords(){
-		immigrationPage.addRecord("pass123");
-		
-	}
-	
-	@Test(priority=2)
 	public void VerifyTitle(){
 		
 		boolean flag = immigrationHomePage.verifyCorrectTitle();;
 		Assert.assertTrue(flag);
 	}
+	
+	@Test(priority=2)
+	public void addRecords(){
+		immigrationPage.addRecord("pass123","2024-20-02","2024-21-03","Pass");
+		
+	}
+	
+	
 //	
 //	@Test(priority=3)
 //	public void loginTest(){
